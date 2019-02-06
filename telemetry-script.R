@@ -4,7 +4,7 @@
 ## Intended Use: Written to analyze home range of raptors with telemetry units. 
 ## Home range calculations are based on Calabrese, J.M. and C.H. Fleming. 2016. ctmm: an R package for analyzing animal relocation dataas a continuous-time stochastic process. Methods in Ecology and Evolution (7) 1124-1132.
 ## Inputs: Input data must be in .csv format. Timestamp must be sorted oldest to newest in .csv prior to import in R.
-## Variables: goea_name: unique name/code for individual eagle
+## Variables: bird_name: unique name/code for individual bird
 ##            long_x: longitude
 ##            lat_y: latitude
 ##            timestamp: mm/dd/yyyy hh:mm:ss
@@ -55,7 +55,7 @@ movedata <- movedata[!is.na(movedata$time),]
 movedata_move <- move(x=movedata$long_x, y=movedata$lat_y,
                       time=movedata$time,
                       proj=CRS("+proj=longlat +ellps=WGS84 +datum=WGS84"),
-                      data=movedata, animal=movedata$goea_name, 
+                      data=movedata, animal=movedata$bird_name, 
                       sensor=movedata$sensor_type)
 
 # Convert to telemetry object, identify needed projection to minimize distortion. Function will default two-point equidistant.
