@@ -1,4 +1,4 @@
-## hwi-telemetry-script.R
+## telemetry-script.R
 ## R 3.5.1
 ## Date Created: 01 October 2018
 ## Intended Use: Written to analyze home range of raptors with telemetry units. 
